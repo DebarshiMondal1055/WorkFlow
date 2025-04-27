@@ -3,10 +3,10 @@ import { createContext, useContext, useState } from "react";
 export const AuthenticationContext=createContext({
     data:{},
     setUserData:()=>{},
-    changeLoggedInUserData:()=>{},
+    setLogInData:()=>{},
     loggedInUserData:{},
-
     logoutUser:()=>{}
+    
 })
 
 export const AuthenticationContextProvider=AuthenticationContext.Provider;

@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import { useAuthContext } from "../../Context/AuthenticationContext";
 
 export default function CreateTask(){
+
     const [title,setTitle]=useState('');
     const [date,setDate]=useState('')
     const [description,setDescription]=useState('')
@@ -63,7 +64,7 @@ export default function CreateTask(){
                 <textarea name="" id="" 
                 value={description}
                 onChange={(e)=>{setDescription(e.target.value)}}
-                className="bg-gray-500 rounded-lg mt-2" rows="10" cols="50"></textarea>
+                className="bg-gray-500 rounded-lg mt-2 px-2 py-1.5" rows="10" cols="50"></textarea>
             </div>
   
             <button type="submit" className="rounded-2xl border-white bg-red-400 w-2/5 mt-2 px-2 py-1">Create Task</button>

@@ -1,10 +1,10 @@
-const employee = [
-  { 
+const employee =[
+  {
     id: 1,
     name: "Alice Johnson",
     email: "employee1@example.com",
     password: "123",
-    role: 'employee',
+    role: "employee",
     tasks: [
       {
         task_id: "task-1-0",
@@ -14,7 +14,7 @@ const employee = [
         active: true,
         completed: false,
         failed: false,
-        new_task: true
+        new_task: false
       },
       {
         task_id: "task-1-1",
@@ -41,7 +41,7 @@ const employee = [
       activeCount: 1,
       completedCount: 1,
       failedCount: 1,
-      newTaskCount: 1
+      newTaskCount: 0
     }
   },
   {
@@ -49,7 +49,7 @@ const employee = [
     name: "Brian Lee",
     email: "employee2@example.com",
     password: "123",
-    role: 'employee',
+    role: "employee",
     tasks: [
       {
         task_id: "task-2-0",
@@ -59,7 +59,7 @@ const employee = [
         active: true,
         completed: false,
         failed: false,
-        new_task: true
+        new_task: false
       },
       {
         task_id: "task-2-1",
@@ -96,7 +96,7 @@ const employee = [
       activeCount: 1,
       completedCount: 2,
       failedCount: 1,
-      newTaskCount: 1
+      newTaskCount: 0
     }
   },
   {
@@ -104,7 +104,7 @@ const employee = [
     name: "Carla Mendes",
     email: "employee3@example.com",
     password: "123",
-    role: 'employee',
+    role: "employee",
     tasks: [
       {
         task_id: "task-3-0",
@@ -114,7 +114,7 @@ const employee = [
         active: true,
         completed: false,
         failed: false,
-        new_task: true
+        new_task: false
       },
       {
         task_id: "task-3-1",
@@ -141,7 +141,7 @@ const employee = [
       activeCount: 1,
       completedCount: 2,
       failedCount: 0,
-      newTaskCount: 1
+      newTaskCount: 0
     }
   },
   {
@@ -149,7 +149,7 @@ const employee = [
     name: "David Patel",
     email: "employee4@example.com",
     password: "123",
-    role: 'employee',
+    role: "employee",
     tasks: [
       {
         task_id: "task-4-0",
@@ -159,7 +159,7 @@ const employee = [
         active: true,
         completed: false,
         failed: false,
-        new_task: true
+        new_task: false
       },
       {
         task_id: "task-4-1",
@@ -206,7 +206,7 @@ const employee = [
       activeCount: 1,
       completedCount: 2,
       failedCount: 2,
-      newTaskCount: 1
+      newTaskCount: 0
     }
   },
   {
@@ -214,7 +214,7 @@ const employee = [
     name: "Emily Zhang",
     email: "employee5@example.com",
     password: "123",
-    role: 'employee',
+    role: "employee",
     tasks: [
       {
         task_id: "task-5-0",
@@ -224,7 +224,7 @@ const employee = [
         active: true,
         completed: false,
         failed: false,
-        new_task: true
+        new_task: false
       },
       {
         task_id: "task-5-1",
@@ -281,10 +281,12 @@ const employee = [
       activeCount: 1,
       completedCount: 3,
       failedCount: 1,
-      newTaskCount: 2
+      newTaskCount: 1
     }
   }
-];
+]
+
+
 
 
 const admin=[

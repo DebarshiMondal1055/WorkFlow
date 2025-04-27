@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Login from "./Components/Authentication/login"
+import Login from "./Components/Authentication/Login"
 import Employee from "./Components/Dashboard/Employee"
 import Admin from "./Components/Dashboard/Admin"
 import { setLocalStorage } from "./Utils/LocalStorage"
@@ -7,20 +7,32 @@ import { AuthenticationContextProvider } from "./Context/AuthenticationContext"
 
 
 function App() {
+ 
   const [user,setUser]=useState('')
   const [data,setData]=useState(null)
   const [loggedInUserData,setLoggedInUserData]=useState(null)
+  
+  useEffect(() => {
+    if (!localStorage.getItem("employee")) {
+      localStorage.setItem("employee", JSON.stringify([]));
+    }
+    if (!localStorage.getItem("admin")) {
+      localStorage.setItem("admin", JSON.stringify([]));
+    }
+  }, []);
+  
   useEffect(()=>{
     const employeeData=JSON.parse(localStorage.getItem('employee'));
     const adminData=JSON.parse(localStorage.getItem('admin'))
     setData({employeeData,adminData});
   },[])
-  
   const setUserData=(data)=>{
     setData(data);
   }
-
-
+  console.log(data)
+  const setLogInData=(data)=>{
+    setLoggedInUserData(data)
+  }
   useEffect(()=>{
     if(data){
       const loggedInUser=JSON.parse(localStorage.getItem('loggedInUser'))
@@ -34,6 +46,7 @@ function App() {
 
   const  logoutUser=()=>{
     setUser('');
+    localStorage.setItem('loggedInUser',null)
   }
   
   const loginHandler = (email, password) => {
@@ -61,7 +74,7 @@ function App() {
 
 
   return (
-    <AuthenticationContextProvider value={{data,setUserData,loggedInUserData,logoutUser}}>
+    <AuthenticationContextProvider value={{data,setUserData,loggedInUserData,logoutUser,setLogInData}}>
         {!user?<Login loginHandler={loginHandler}/> :null} 
         {user=='admin'?<Admin/>:(user=='employee'?<Employee/>:'')}
     </AuthenticationContextProvider>
